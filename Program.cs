@@ -17,13 +17,15 @@ namespace bsi_3
                 if (choose1 != "1" && choose1 != "2" && choose1 != "3") throw new ArgumentException();
 
                 Console.WriteLine("Wybierz czynność:");
-                Console.WriteLine("1. Kodowanie");
-                Console.WriteLine("2. Rozkodowywanie");
+                Console.WriteLine("1. Szyfrowanie");
+                Console.WriteLine("2. Rozszyfrowywanie");
                 Console.Write("> ");
                 string choose2 = Console.ReadLine();
                 if (choose2 != "1" && choose2 != "2") throw new ArgumentException();
 
-                Console.WriteLine("Wprowadź ciąg znaków:");
+                Console.Write("Wprowadź ciąg znaków do ");
+                if (choose2 == "1") Console.WriteLine("zaszyfrowania:");
+                else Console.WriteLine("rozszyfrowania:");
                 Console.Write("> ");
                 string input = Console.ReadLine();
                 Console.WriteLine("Wprowadź klucz:");
@@ -54,14 +56,14 @@ namespace bsi_3
                 switch (choose2)
                 {
                     case "1":
-                        Console.Write("Zakodowany ciąg znaków: ");
+                        Console.Write("Zaszyfrowany ciąg znaków: ");
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine(cipher.Encrypt());
                         Console.ResetColor();
                         break;
 
                     case "2":
-                        Console.Write("Rozkodowany ciąg znaków: ");
+                        Console.Write("Rozszyfrowany ciąg znaków: ");
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine(cipher.Decrypt());
                         Console.ResetColor();
