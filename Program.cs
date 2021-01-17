@@ -23,7 +23,7 @@ namespace bsi_3
                 string choose2 = Console.ReadLine();
                 if (choose2 != "1" && choose2 != "2") throw new ArgumentException();
 
-                Console.WriteLine("Wprowadź ciąg znaków do zakodowania:");
+                Console.WriteLine("Wprowadź ciąg znaków:");
                 Console.Write("> ");
                 string input = Console.ReadLine();
                 Console.WriteLine("Wprowadź klucz:");
