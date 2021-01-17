@@ -14,14 +14,14 @@ namespace bsi_3.Ciphers
             {
                 if (_alphabet.IndexOf(_input[i]) != -1) input_new += _input[i];
             }
-            if (input_new == null) throw new ArgumentNullException("Input cant be empty!");
+            if (input_new == string.Empty) throw new ArgumentNullException("Input can't be empty!");
             else _input = input_new;
 
             for (int i = 0; i < _code.Length; i++)
             {
                 if (char.IsDigit(_code[i]) == true) code_new += _code[i];
             }
-            if (code_new == null) throw new ArgumentNullException("Code cant be empty!");
+            if (code_new == string.Empty) throw new ArgumentNullException("Code can't be empty!");
             else _offset = int.Parse(code_new) % _alphabet.Length;
         }
 
@@ -34,8 +34,6 @@ namespace bsi_3.Ciphers
                 int index = _alphabet.IndexOf(_input[i]);
 
                 output += _alphabet[(index + _offset) % _alphabet.Length];
-                //if (index == -1) output += _input[i];
-                //else output += _alphabet[(index + _offset) % _alphabet.Length];
             }
 
             return output;
@@ -50,12 +48,9 @@ namespace bsi_3.Ciphers
                 int index = _alphabet.IndexOf(_input[i]);
 
                 output += _alphabet[(_alphabet.Length + index - _offset) % _alphabet.Length];
-                //if (index == -1) output += _input[i];
-                //else output += _alphabet[(_alphabet.Length + index - _offset) % _alphabet.Length];
             }
 
             return output;
         }
-
     }
 }

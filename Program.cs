@@ -8,7 +8,7 @@ namespace bsi_3
         {
             while (true)
             {
-                Console.WriteLine("Wybierz szyfr:");
+                Console.WriteLine("Wybierz rodzaj szyfru:");
                 Console.WriteLine("1. Szyfr Cezara");
                 Console.WriteLine("2. Szyfr Vigenere");
                 Console.WriteLine("3. Szyfr Playfair");
@@ -21,12 +21,12 @@ namespace bsi_3
                 Console.WriteLine("2. Rozkodowywanie");
                 Console.Write("> ");
                 string choose2 = Console.ReadLine();
-                if (choose2 != "1" && choose1 != "2") throw new ArgumentException();
+                if (choose2 != "1" && choose2 != "2") throw new ArgumentException();
 
-                Console.WriteLine("Wprowadź ciąg znaków:");
+                Console.WriteLine("Wprowadź ciąg znaków do zakodowania:");
                 Console.Write("> ");
                 string input = Console.ReadLine();
-                Console.WriteLine("Wprowadź szyfr:");
+                Console.WriteLine("Wprowadź klucz:");
                 Console.Write("> ");
                 string code = Console.ReadLine();
                 Console.WriteLine();
@@ -55,12 +55,16 @@ namespace bsi_3
                 {
                     case "1":
                         Console.Write("Zakodowany ciąg znaków: ");
+                        Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine(cipher.Encrypt());
+                        Console.ResetColor();
                         break;
 
                     case "2":
                         Console.Write("Rozkodowany ciąg znaków: ");
+                        Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine(cipher.Decrypt());
+                        Console.ResetColor();
                         break;
                 }
 
